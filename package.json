@@ -2,7 +2,7 @@
   "name": "viajes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://SebastianTapia1104.github.io/viajes-Sebastian-Tapia-PFY2202",
+  "homepage": "https://SebastianTapia1104.github.io/Viajes-Sebastian-Tapia-PFY2202",
   "dependencies": {
     "@apollo/client": "^4.3.8",
     "@testing-library/dom": "^10.4.2",

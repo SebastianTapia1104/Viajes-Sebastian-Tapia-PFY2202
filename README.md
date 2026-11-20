@@ -2,7 +2,7 @@
 
 Agencia de viajes hecha con React. La persona elige un destino y después revisa vuelos y hoteles para armar el viaje. No hay un backend real: Mock Service Worker intercepta las peticiones en el navegador.
 
-Sitio publicado: https://SebastianTapia1104.github.io/viajes-Sebastian-Tapia-PFY2202/
+Sitio publicado: https://SebastianTapia1104.github.io/Viajes-Sebastian-Tapia-PFY2202/
 
 ## Qué hace
 
@@ -41,7 +41,7 @@ npm install
 npm start
 ```
 
-La terminal indica la dirección. Con el `homepage` del proyecto queda en http://localhost:3000/viajes-Sebastian-Tapia-PFY2202/
+La terminal indica la dirección. Con el `homepage` del proyecto queda en http://localhost:3000/Viajes-Sebastian-Tapia-PFY2202/
 
 ## Cómo publicarlo
 
@@ -51,7 +51,7 @@ La terminal indica la dirección. Con el `homepage` del proyecto queda en http:/
 npm run deploy
 ```
 
-Ese comando genera `build`, copia `index.html` como `404.html` para que las rutas sigan funcionando al recargar, y sube el resultado. El repositorio debe llamarse `viajes-Sebastian-Tapia-PFY2202`.
+Ese comando genera `build`, copia `index.html` como `404.html` para que las rutas sigan funcionando al recargar, y sube el resultado. El repositorio es `Viajes-Sebastian-Tapia-PFY2202`.
 
 ## Navegadores
 
