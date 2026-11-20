@@ -1,6 +1,6 @@
 # Viajes Machapa
 
-Agencia de viajes hecha con React. La persona elige un destino y después revisa vuelos y hoteles para armar el viaje. No hay un backend real: Mock Service Worker intercepta las peticiones en el navegador.
+Agencia de viajes hecha con React. Quien entra elige un destino y después revisa vuelos y hoteles para armar el viaje. No hay un backend real: Mock Service Worker intercepta las peticiones en el navegador.
 
 Sitio publicado: https://SebastianTapia1104.github.io/Viajes-Sebastian-Tapia-PFY2202/
 
@@ -34,25 +34,13 @@ Si el service worker no alcanza a partir, la pantalla explica el problema y ofre
 | `/destinos/cusco` | Error del servicio GraphQL |
 | `/otra` | Página no encontrada |
 
-## Cómo ejecutarlo
+## Cómo verlo en local
 
 ```bash
 npm install
 npm start
 ```
 
-La terminal indica la dirección. Con el `homepage` del proyecto queda en http://localhost:3000/Viajes-Sebastian-Tapia-PFY2202/
+Con el `homepage` del proyecto, la aplicación queda en http://localhost:3000/Viajes-Sebastian-Tapia-PFY2202/
 
-## Cómo publicarlo
-
-`master` guarda el código. GitHub Pages publica la compilación en la rama `gh-pages`.
-
-```bash
-npm run deploy
-```
-
-Ese comando genera `build`, copia `index.html` como `404.html` para que las rutas sigan funcionando al recargar, y sube el resultado. El repositorio es `Viajes-Sebastian-Tapia-PFY2202`.
-
-## Navegadores
-
-La interfaz usa HTML, CSS de grilla y flex, y el `browserslist` del proyecto. El flujo completo se recorrió en Chrome: listado, búsqueda, filtros, ficha del destino, vuelos, hoteles, listados vacíos, error, ruta inexistente, actualización del catálogo y un ancho de 390 px. En Microsoft Edge, si el service worker no alcanza a iniciar, aparece la pantalla de recuperación.
+El código fuente está en `main`. La rama `gh-pages` contiene la compilación que sirve GitHub Pages. `npm run deploy` vuelve a generar esa compilación, copia `index.html` como `404.html` para que las rutas sigan funcionando al recargar, y la publica.
