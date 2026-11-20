@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Viajes Machapa
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Agencia de viajes hecha con React. La persona elige un destino y después revisa vuelos y hoteles para armar el viaje. No hay un backend real: Mock Service Worker intercepta las peticiones en el navegador.
 
-## Available Scripts
+Sitio publicado: https://SebastianTapia1104.github.io/viajes-Sebastian-Tapia-PFY2202/
 
-In the project directory, you can run:
+## Qué hace
 
-### `npm start`
+- Lista los destinos con `GET /api/destinos`. Cada destino trae país, región, resumen y actividades. Esa parte usa REST.
+- Al abrir un destino consulta vuelos y hoteles con GraphQL, en `POST /graphql`, operación `OfertasPorDestino`. La respuesta trae precios, fechas y disponibilidad.
+- La navegación está en React Router: inicio, ficha del destino, vuelos, hoteles y página no encontrada.
+- Muestra carga, listados vacíos y errores. Cusco responde con error para probar el reintento. Bariloche no tiene hoteles. San Pedro de Atacama no tiene vuelos. Río tiene un vuelo y un hotel sin cupos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Caché
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Una respuesta se guarda solo si el cuerpo es JSON y trae el formato esperado. Si no, no entra a la caché ni se muestra.
 
-### `npm test`
+La copia de los destinos vence a los 45 segundos. Además, la aplicación consulta `GET /api/catalogo/version` al volver a la pestaña y cada 30 segundos. Si la versión cambió, descarta la caché REST y limpia la caché de Apollo para volver a pedir vuelos y hoteles. El botón «Simular cambio del catálogo» modifica París (una actividad, la tarifa del Hotel Le Marais y los asientos del primer vuelo) para ver ese recorrido durante la sesión.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Si el mock no inicia
 
-### `npm run build`
+Si el service worker no alcanza a partir, la pantalla explica el problema y ofrece reintentar. La aplicación no queda en blanco.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Rutas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Ruta | Contenido |
+|---|---|
+| `/` | Destinos, búsqueda y filtro por región |
+| `/destinos/paris` | Resumen de vuelos y hoteles |
+| `/destinos/paris/vuelos` | Solo vuelos |
+| `/destinos/paris/hoteles` | Solo hoteles |
+| `/destinos/bariloche` | Vuelos, sin hoteles |
+| `/destinos/atacama` | Hoteles, sin vuelos |
+| `/destinos/cusco` | Error del servicio GraphQL |
+| `/otra` | Página no encontrada |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Cómo ejecutarlo
 
-### `npm run eject`
+```bash
+npm install
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+La terminal indica la dirección. Con el `homepage` del proyecto queda en http://localhost:3000/viajes-Sebastian-Tapia-PFY2202/
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Cómo publicarlo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`master` guarda el código. GitHub Pages publica la compilación en la rama `gh-pages`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run deploy
+```
 
-## Learn More
+Ese comando genera `build`, copia `index.html` como `404.html` para que las rutas sigan funcionando al recargar, y sube el resultado. El repositorio debe llamarse `viajes-Sebastian-Tapia-PFY2202`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Navegadores
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+La interfaz usa HTML, CSS de grilla y flex, y el `browserslist` del proyecto. El flujo completo se recorrió en Chrome: listado, búsqueda, filtros, ficha del destino, vuelos, hoteles, listados vacíos, error, ruta inexistente, actualización del catálogo y un ancho de 390 px. En Microsoft Edge, si el service worker no alcanza a iniciar, aparece la pantalla de recuperación.

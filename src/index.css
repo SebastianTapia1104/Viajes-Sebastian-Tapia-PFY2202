@@ -1,13 +1,49 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --papel: #f6f3ea;
+  --tinta: #1c2416;
+  --suave: #6d6856;
+  --verde: #1b7a3c;
+  --verde-hoja: #3d8c4a;
+  --verde-oscuro: #14532d;
+  --verde-profundo: #0c3320;
+  --oliva: #6d7634;
+  --caqui: #c4ae78;
+  --caqui-oscuro: #8a7344;
+  --lima: #e6d48a;
+  --blanco: #fffdf8;
+  --arena: #f4ead2;
+  --linea: #ddd3b8;
+  --aviso: #f3e7c4;
+  --sombra: 0 12px 30px rgba(28, 36, 22, 0.08);
+  --teal: var(--verde);
+  --teal-oscuro: var(--verde-oscuro);
+  --coral: #8a5a32;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--tinta);
+  background:
+    radial-gradient(820px 380px at 110% -8%, #e4efd2 0%, transparent 62%),
+    radial-gradient(640px 340px at -12% 18%, #efe3c4 0%, transparent 58%),
+    var(--papel);
+  font-family: Montserrat, "Segoe UI", "Helvetica Neue", sans-serif;
+  line-height: 1.45;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--lima);
+  outline-offset: 2px;
 }
