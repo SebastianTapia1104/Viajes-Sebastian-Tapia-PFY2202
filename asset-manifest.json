@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Viajes-Sebastian-Tapia-PFY2202/static/css/main.b88e2835.css",
+    "main.js": "/Viajes-Sebastian-Tapia-PFY2202/static/js/main.c31bf4a4.js",
+    "static/js/392.dc89f814.chunk.js": "/Viajes-Sebastian-Tapia-PFY2202/static/js/392.dc89f814.chunk.js",
+    "static/js/453.7e498046.chunk.js": "/Viajes-Sebastian-Tapia-PFY2202/static/js/453.7e498046.chunk.js",
+    "static/js/699.ca5c66df.chunk.js": "/Viajes-Sebastian-Tapia-PFY2202/static/js/699.ca5c66df.chunk.js",
+    "static/js/966.32fb6357.chunk.js": "/Viajes-Sebastian-Tapia-PFY2202/static/js/966.32fb6357.chunk.js",
+    "index.html": "/Viajes-Sebastian-Tapia-PFY2202/index.html",
+    "main.b88e2835.css.map": "/Viajes-Sebastian-Tapia-PFY2202/static/css/main.b88e2835.css.map",
+    "main.c31bf4a4.js.map": "/Viajes-Sebastian-Tapia-PFY2202/static/js/main.c31bf4a4.js.map",
+    "392.dc89f814.chunk.js.map": "/Viajes-Sebastian-Tapia-PFY2202/static/js/392.dc89f814.chunk.js.map",
+    "453.7e498046.chunk.js.map": "/Viajes-Sebastian-Tapia-PFY2202/static/js/453.7e498046.chunk.js.map",
+    "699.ca5c66df.chunk.js.map": "/Viajes-Sebastian-Tapia-PFY2202/static/js/699.ca5c66df.chunk.js.map",
+    "966.32fb6357.chunk.js.map": "/Viajes-Sebastian-Tapia-PFY2202/static/js/966.32fb6357.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b88e2835.css",
+    "static/js/main.c31bf4a4.js"
+  ]
+}
